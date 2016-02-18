@@ -1,6 +1,8 @@
 set nocompatible              " required
 filetype off                  " required
+set shell=bash "for sane redirecting with syntastic
 
+" PLUGIN MANAGEMENT
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -36,23 +38,24 @@ set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 \ [%l/%L\ (%p%%)
 filetype plugin indent on
-au FileType py set autoindent
-au FileType py set smartindent
-au FileType py set textwidth=79 " PEP-8 Friendly
 
+" solarized stuff
 syntax enable
 set t_Co=16
 set background=dark
 "set background=light
 colorscheme solarized
-
+call togglebg#map("<F5>")
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+nnoremap <space> za  " Enable folding with the spacebar
 
-" Enable folding with the spacebar
-nnoremap <space> za
+" python indent settings
+au FileType py set autoindent
+au FileType py set smartindent
+au FileType py set textwidth=79 " PEP-8 Friendly
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -76,13 +79,13 @@ set nu "line numbering
 "let g:ycm_autoclose_preview_window_after_completion=1
 "map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-call togglebg#map("<F5>")
-map! jj <ESC>
-map! jk <ESC>
 " gvim font
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+
 " Control shortcuts
 
+map! jj <ESC>
+map! jk <ESC>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
