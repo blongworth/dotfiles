@@ -31,6 +31,7 @@ Plugin 'nvie/vim-flake8'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'reedes/vim-pencil'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -44,6 +45,7 @@ set laststatus=2
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 let g:airline_powerline_symbols='fancy'
+let g:airline_section_x = '%{PencilMode()}
 set list listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\
 \ [%l/%L\ (%p%%)
@@ -78,6 +80,12 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text,txt     call pencil#init()
+augroup END
 
 highlight BadWhitespace ctermbg = red guibg = darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
