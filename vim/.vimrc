@@ -32,6 +32,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'reedes/vim-pencil'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -97,6 +98,11 @@ set nu
 " YouCompleteMe setup
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" vim.ack setup
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " gvim font
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
