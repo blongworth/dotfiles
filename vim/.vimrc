@@ -9,7 +9,7 @@ set shell=bash "for sane redirecting with syntastic
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all 
 " the plugins.
-let mapleader=","
+"let mapleader=","
 
 " PLUGIN MANAGEMENT
 " set the runtime path to include Vundle and initialize
@@ -32,6 +32,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'reedes/vim-pencil'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,6 +57,11 @@ set background=dark
 "set background=light
 colorscheme solarized
 call togglebg#map("<F5>")
+
+"ag stuff
+if executable('ag')
+  let g:ack_prg = "ag --column"
+endif
 
 " Enable folding
 set foldmethod=indent
