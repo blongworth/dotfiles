@@ -104,6 +104,11 @@ set nu
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+" vim.ack setup
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " gvim font
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 
