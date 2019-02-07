@@ -84,7 +84,7 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix |
 
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js, *.html, *.css, *.R, *.Rmd
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2 |
@@ -110,6 +110,14 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Make vim-r indent with 2 spaces
+" set vim-r-plugin to 
+let r_indent_align_args = 0
+
+" Set vim-r-plugin to mimics ess :
+let r_indent_ess_comments = 0
+let r_indent_ess_compatible = 0
 
 " gvim font
 set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
