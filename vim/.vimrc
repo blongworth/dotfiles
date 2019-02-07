@@ -21,7 +21,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
-Bundle 'vim-scripts/Vim-R-plugin'
+" Bundle 'vim-scripts/Vim-R-plugin'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
