@@ -5,11 +5,14 @@
 set nocompatible
 
 " set the colorscheme
-"colorscheme solarized
+set termguicolors       "allow truecolor terminals
+set background=dark
+colorscheme solarized8
 
 " turn on syntax hilight
 syntax enable
 
+" tab defaults
 set tabstop=4		"spaces per tab char
 set softtabstop=4	"spaces inserted by tab
 set expandtab		"tabs are spaces
@@ -47,11 +50,11 @@ nnoremap <space> za
 
 " PLUGIN MANAGEMENT
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
@@ -73,8 +76,8 @@ Plugin 'gmarik/Vundle.vim'
 "Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+"call vundle#end()            " required
+"filetype plugin indent on    " required
 
 
 " vim-airline config
@@ -129,13 +132,13 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 set encoding=utf-8
 
 " YouCompleteMe setup
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " vim.ack setup
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+"if executable('ag')
+"  let g:ackprg = 'ag --vimgrep'
+"endif
 
 " Make vim-r indent with 2 spaces
 " set vim-r-plugin to 
